@@ -1,3 +1,7 @@
+body {
+  background-color: black; /* Latar belakang hitam */
+}
+
 /* Gaya dasar untuk container utama */
 .container {
   position: relative;
@@ -13,14 +17,54 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f2f2f2;
+  background-color: black;
   transition: transform 1s ease;
 }
 
+/* Gaya untuk kotak password */
 .password-form {
-  padding: 20px;
-  background-color: white;
-  border-radius: 8px;
+  background-color: white; /* Latar belakang putih */
+  padding: 20px; /* Padding agar terlihat lebih lega */
+  border-radius: 8px; /* Sudut yang lebih lembut */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow untuk efek 3D */
+  text-align: center;
+}
+
+.password-form label {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+
+.password-form input[type="password"] {
+  width: 90%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.password-form input[type="password"]:focus {
+  border-color: black; /* Warna border saat fokus */
+  outline: none; /* Hilangkan outline */
+}
+
+/* Gaya untuk tombol submit */
+.password-form button[type="submit"] {
+  padding: 10px 20px; /* Padding untuk ukuran tombol */
+  background-color: gray; /* Warna latar belakang tombol */
+  color: white; /* Warna teks tombol */
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.password-form button[type="submit"]:hover {
+  background-color: black; /* Warna latar belakang saat hover */
 }
 
 /* Gaya dasar untuk slideshow */
