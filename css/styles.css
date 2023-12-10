@@ -1,0 +1,71 @@
+/* Gaya dasar untuk container utama */
+.container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Gaya untuk form password */
+.password-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  transition: transform 1s ease;
+}
+
+.password-form {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+/* Gaya dasar untuk slideshow */
+
+.slides-container {
+  width: 100%; /* Lebar maksimum sesuai dengan layar */
+  overflow: hidden; /* Mengatasi gambar yang terlalu besar */
+}
+
+.slides {
+  display: flex; /* Mengatur foto-foto berjajar secara horizontal */
+  transition: transform 3s ease; /* Efek pergeseran dengan durasi 3 detik */
+}
+
+img {
+  width: calc(100vw / 4); /* Menyesuaikan ukuran lebar foto */
+  height: auto; /* Menjaga proporsi asli gambar */
+  object-fit: cover; /* Untuk memastikan gambar terlihat baik dalam proporsi yang diinginkan */
+  vertical-align: top; /* Mengatur posisi vertikal ke atas */
+}
+
+.lyrics-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-family: "Helvetica", Arial, sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 24px;
+  color: yellow;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000; /* Menambahkan outline hitam */
+  display: none; /* Sembunyikan lirik awalnya */
+}
+
+@media screen and (max-width: 768px) {
+  img {
+    width: 100%; /* Mengisi lebar layar pada perangkat seluler */
+    height: auto;
+    object-fit: cover;
+    vertical-align: top;
+  }
+  .password-form {
+    max-width: 100%; /* Mengisi lebar layar pada perangkat seluler */
+  }
+}
