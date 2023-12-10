@@ -2,6 +2,51 @@ body {
   background-color: black; /* Latar belakang hitam */
 }
 
+/* Gaya untuk teks yang sedang diketik */
+.typewriter-text {
+  z-index: 2; /* Menetapkan indeks z lebih tinggi dari kotak password */
+  position: relative;
+  overflow: hidden; /* Teks yang melebihi ukuran akan tersembunyi */
+  border-right: 0.15em solid orange; /* Garis imitasi kursor */
+  white-space: pre-line; /* Mengizinkan jeda baris */
+  color: white;
+  margin: 0 auto; /* Posisikan di tengah */
+  letter-spacing: 0.15em; /* Jarak antar huruf */
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Animasi ketik */
+@keyframes typing {
+  from {
+    width: 0; /* Teks dimulai dari 0 lebar */
+  }
+  to {
+    width: 100%; /* Teks menjadi lebar penuh */
+  }
+}
+
+/* Animasi kursor yang berkedip */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent; /* Kursor transparan saat tidak aktif */
+  }
+  50% {
+    border-color: orange; /* Kursor berwarna saat aktif */
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+
 /* Gaya dasar untuk container utama */
 .container {
   position: relative;
@@ -72,6 +117,7 @@ body {
 .slides-container {
   width: 100%; /* Lebar maksimum sesuai dengan layar */
   overflow: hidden; /* Mengatasi gambar yang terlalu besar */
+  z-index: 0;
 }
 
 .slides {
@@ -87,6 +133,7 @@ img {
 }
 
 .lyrics-container {
+  z-index: 0;
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -111,5 +158,8 @@ img {
   }
   .password-form {
     max-width: 100%; /* Mengisi lebar layar pada perangkat seluler */
+  }
+  .password-message {
+    margin-bottom: -200px; /* Mengurangi jarak antara teks dengan kotak password */
   }
 }

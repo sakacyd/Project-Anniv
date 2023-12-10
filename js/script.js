@@ -9,6 +9,26 @@ const lyricsElement = document.querySelector(".lyrics");
 let moveSlides = 0;
 const slideWidth = 100 / 4; // Lebar setiap slide (4 foto)
 
+// Teks yang ingin dijalankan dengan efek ketikan
+const textToType =
+  "Happy anniversary, my love. As I reflect on these beautiful 365 days, I find myself hoping for an eternity by your side (cliché, I know). Nevertheless, here's my humble tribute, expressing immense gratitude for crossing paths with you, for every precious moment shared, and for the countless moments yet to unfold. You've woven your essence into my existence, and the mere thought of a future with you fills my soul with an exhilaration akin to a breathtaking dance on the edge of eternity.";
+
+// Inisialisasi elemen teks dan variabel
+const typingTextElement = document.getElementById("typingText");
+let charIndex = 0;
+
+// Fungsi untuk menampilkan teks satu per satu
+function typeText() {
+  if (charIndex < textToType.length) {
+    typingTextElement.innerHTML += textToType.charAt(charIndex);
+    charIndex++;
+    setTimeout(typeText, 100); // Waktu delay antar karakter (dalam milidetik)
+  }
+}
+
+// Panggil fungsi untuk memulai efek mengetik
+typeText();
+
 // Array dengan informasi waktu dan teks lirik
 const lyricsData = [
   { time: 9, text: "Moon, a hole of light" },
@@ -55,7 +75,7 @@ passwordForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const passwordInput = document.getElementById("password").value;
 
-  if (passwordInput === "bibubganteng") {
+  if (passwordInput === "YES") {
     passwordContainer.style.transition = "transform 1s ease";
     passwordContainer.style.transform = "translateX(-100%)";
 
@@ -67,9 +87,12 @@ passwordForm.addEventListener("submit", function (e) {
       setInterval(move, 3000); // Bergerak setiap 3 detik
       audio.play(); // Memulai pemutaran lagu
       lyricsContainer.style.display = "block"; // Tampilkan kontainer lirik setelah slideshow dimulai
+
+      // Tambahkan animasi menghilangkan teks typewriter
+      typingTextElement.style.animation = "fadeOut 1s forwards";
     }, 1000);
   } else {
-    alert("Password salah!");
+    alert("SAY IT LOUDER!");
   }
 });
 
